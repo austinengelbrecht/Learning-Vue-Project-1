@@ -66,7 +66,7 @@ const game = Vue.createApp({
       this.currentRound++;
       const attackDamage = getRandVal(10, 25);
       this.monsterHealth -= attackDamage;
-      this.addLogMessage("player", "Spl Attack", attackDamage);
+      this.addLogMessage("player", "attack", attackDamage);
       this.attackPlayer();
     },
     healPlayer() {
@@ -91,7 +91,7 @@ const game = Vue.createApp({
     },
     addLogMessage(who, what, value) {
       this.battleLog.unshift({
-        action: who,
+        actionBy: who,
         actionType: what,
         actionValue: value,
       });
