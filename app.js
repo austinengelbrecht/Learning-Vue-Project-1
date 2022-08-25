@@ -40,7 +40,7 @@ const game = Vue.createApp({
     },
     healPlayer() {
       this.currentRound++;
-      const healAmt = getRandVal(5, 10);
+      const healAmt = getRandVal(5, 20);
       this.playerHealth += healAmt;
     },
   },
