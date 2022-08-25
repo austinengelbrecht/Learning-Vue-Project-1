@@ -9,7 +9,7 @@ const game = Vue.createApp({
       playerHealth: 100,
       currentRound: 0,
       winner: null,
-      batleLog: [],
+      battleLog: [],
     };
   },
   watch: {
@@ -85,7 +85,13 @@ const game = Vue.createApp({
     surrender() {
       this.winner = "monster";
     },
-    addLogMessage(who, what, value) {},
+    addLogMessage(who, what, value) {
+      this.battleLog.unshift({
+        action: who,
+        actionType: what,
+        actionValue: value,
+      });
+    },
   },
 });
 game.mount("#game");
