@@ -9,6 +9,7 @@ const game = Vue.createApp({
       playerHealth: 100,
       currentRound: 0,
       winner: null,
+      batleLog: [],
     };
   },
   watch: {
