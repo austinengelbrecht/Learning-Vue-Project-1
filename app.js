@@ -8,6 +8,7 @@ const game = Vue.createApp({
   methods: {
     attackMonster() {
       const attackDamage = Math.floor(Math.random() * (12 - 5)) + 5;
+      this.monsterHealth -= attackDamage;
     },
   },
 });
