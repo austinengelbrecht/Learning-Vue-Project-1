@@ -9,6 +9,7 @@ const game = Vue.createApp({
       playerHealth: 100,
       currentRound: 0,
       winner: null,
+      battleLog: [],
     };
   },
   watch: {
@@ -53,16 +54,19 @@ const game = Vue.createApp({
       this.currentRound++;
       const attackDamage = getRandVal(5, 12);
       this.monsterHealth -= attackDamage;
+      this.addLogMessage("player", "attack", attackDamage);
       this.attackPlayer();
     },
     attackPlayer() {
       const attackDamage = getRandVal(8, 15);
       this.playerHealth -= attackDamage;
+      this.addLogMessage("monster", "attack", attackDamage);
     },
     specialAttack() {
       this.currentRound++;
       const attackDamage = getRandVal(10, 25);
       this.monsterHealth -= attackDamage;
+      this.addLogMessage("player", "attack", attackDamage);
       this.attackPlayer();
     },
     healPlayer() {
@@ -73,6 +77,7 @@ const game = Vue.createApp({
       } else {
         this.playerHealth += healAmt;
       }
+      this.addLogMessage("player", "heals", healAmt);
       this.attackPlayer();
     },
     newGame() {
@@ -83,6 +88,13 @@ const game = Vue.createApp({
     },
     surrender() {
       this.winner = "monster";
+    },
+    addLogMessage(who, what, value) {
+      this.battleLog.unshift({
+        actionBy: who,
+        actionType: what,
+        actionValue: value,
+      });
     },
   },
 });
