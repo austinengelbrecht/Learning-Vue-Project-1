@@ -17,6 +17,9 @@ const game = Vue.createApp({
     playerHealthBar() {
       return { width: this.playerHealth + "%" };
     },
+    specialAttackAvail() {
+      return this.currentRound % 3 !== 0;
+    },
   },
   methods: {
     attackMonster() {
