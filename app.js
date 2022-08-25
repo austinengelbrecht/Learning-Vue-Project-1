@@ -5,5 +5,8 @@ const game = Vue.createApp({
       playerHealth: 100,
     };
   },
+  methods: {
+    attackMonster() {},
+  },
 });
 game.mount("#game");
