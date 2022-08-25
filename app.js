@@ -30,6 +30,7 @@ const game = Vue.createApp({
     specialAttackMonster() {
       const attackDamage = getRandVal(10, 25);
       this.monsterHealth -= attackDamage;
+      this.attackPlayer();
     },
   },
 });
