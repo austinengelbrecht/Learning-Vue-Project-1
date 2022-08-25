@@ -14,14 +14,14 @@ const game = Vue.createApp({
     playerHealth(value) {
       if (value <= 0 && this.monsterHealth <= 0) {
         // Draw
-      } else if (value <= 0 ) {
+      } else if (value <= 0) {
         //Player Lost
       }
     },
     monsterHealth(value) {
-      if (value <= 0 %% this.playerHealth <=0) {
-        //Draw 
-      } else if (value <= 0 ){
+      if (value <= 0 && this.playerHealth <= 0) {
+        //Draw
+      } else if (value <= 0) {
         //Monster lost
       }
     },
