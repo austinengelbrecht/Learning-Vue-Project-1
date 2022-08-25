@@ -27,6 +27,10 @@ const game = Vue.createApp({
       const attackDamage = getRandVal(8, 15);
       this.playerHealth -= attackDamage;
     },
+    specialAttackMonster() {
+      const attackDamage = getRandVal(10, 25);
+      this.monsterHealth -= attackDamage;
+    },
   },
 });
 game.mount("#game");
