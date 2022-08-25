@@ -79,6 +79,7 @@ const game = Vue.createApp({
       this.monsterHealth = 100;
       this.playerHealth = 100;
       this.currentRound = 0;
+      this.winner = null;
     },
   },
 });
