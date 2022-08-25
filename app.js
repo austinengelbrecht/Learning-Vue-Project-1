@@ -41,7 +41,11 @@ const game = Vue.createApp({
     healPlayer() {
       this.currentRound++;
       const healAmt = getRandVal(5, 20);
-      this.playerHealth += healAmt;
+      if (this.playerHealth + healAmt > 100) {
+        this.playerHealth = 100;
+      } else {
+        this.playerHealth += healAmt;
+      }
     },
   },
 });
