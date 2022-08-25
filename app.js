@@ -6,7 +6,9 @@ const game = Vue.createApp({
     };
   },
   methods: {
-    attackMonster() {},
+    attackMonster() {
+      const attackDamage = Math.floor(Math.random() * (12 - 5)) + 5;
+    },
   },
 });
 game.mount("#game");
